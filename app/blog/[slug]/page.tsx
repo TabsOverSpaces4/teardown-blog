@@ -156,7 +156,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </p>
 
           <div
-            className="flex items-center gap-4 text-sm"
+            className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm"
             style={{ color: "var(--text-muted)" }}
           >
             <Link
@@ -201,10 +201,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Content with TOC */}
         <div className="flex gap-12 max-w-4xl">
           <div className="flex-1 min-w-0">
-            <TableOfContents headings={headings} />
+            <TableOfContents headings={headings} variant="inline" />
             <MdxContent source={content} />
           </div>
-          <TableOfContents headings={headings} />
+          <TableOfContents headings={headings} variant="sidebar" />
         </div>
 
         {/* Author bio */}
