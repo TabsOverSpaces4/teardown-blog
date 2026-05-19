@@ -33,6 +33,7 @@ export function PostFilter({ posts }: PostFilterProps) {
             { value: "all", label: "All" },
             { value: "teardown", label: "Teardowns" },
             { value: "comparison", label: "Comparisons" },
+            { value: "opinion", label: "Opinions" },
           ].map((opt) => (
             <button
               key={opt.value}

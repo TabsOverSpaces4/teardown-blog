@@ -43,7 +43,11 @@ export function PostCard({ post, index = 0 }: PostCardProps) {
             />
             <div className="absolute top-3 left-3">
               <Badge variant={frontmatter.type}>
-                {frontmatter.type === "teardown" ? "Teardown" : "Comparison"}
+                {frontmatter.type === "teardown"
+                  ? "Teardown"
+                  : frontmatter.type === "opinion"
+                    ? "Opinion"
+                    : "Comparison"}
               </Badge>
             </div>
           </div>

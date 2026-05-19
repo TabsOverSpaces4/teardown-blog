@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 
 interface BadgeProps {
-  variant?: "teardown" | "comparison" | "default";
+  variant?: "teardown" | "comparison" | "opinion" | "default";
   children: React.ReactNode;
   className?: string;
 }
@@ -14,6 +14,8 @@ export function Badge({ variant = "default", children, className }: BadgeProps) 
       "bg-[var(--accent)] text-white",
     comparison:
       "bg-[var(--text-primary)] text-[var(--bg-primary)]",
+    opinion:
+      "bg-[var(--text-muted)] text-white",
     default:
       "bg-[var(--bg-secondary)] text-[var(--text-muted)] border border-[var(--border)]",
   };

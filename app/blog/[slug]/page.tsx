@@ -121,7 +121,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <header className="max-w-3xl mb-10">
           <div className="flex items-center gap-3 mb-4">
             <Badge variant={frontmatter.type}>
-              {frontmatter.type === "teardown" ? "Teardown" : "Comparison"}
+              {frontmatter.type === "teardown"
+                ? "Teardown"
+                : frontmatter.type === "opinion"
+                  ? "Opinion"
+                  : "Comparison"}
             </Badge>
             {frontmatter.products.map((product) => (
               <span

@@ -10,7 +10,7 @@ export interface PostFrontmatter {
   slug: string;
   author: string;
   date: string;
-  type: "teardown" | "comparison";
+  type: "teardown" | "comparison" | "opinion";
   products: { name: string; logo?: string }[];
   cycle: number;
   excerpt: string;
@@ -64,7 +64,7 @@ export function getPostsByAuthor(authorSlug: string): Post[] {
   return getAllPosts().filter((p) => p.frontmatter.author === authorSlug);
 }
 
-export function getPostsByType(type: "teardown" | "comparison"): Post[] {
+export function getPostsByType(type: "teardown" | "comparison" | "opinion"): Post[] {
   return getAllPosts().filter((p) => p.frontmatter.type === type);
 }
 

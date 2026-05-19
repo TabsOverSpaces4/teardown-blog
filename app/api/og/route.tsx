@@ -56,10 +56,18 @@ export async function GET(req: NextRequest) {
               fontWeight: 600,
               color: "white",
               backgroundColor:
-                type === "comparison" ? "#2A2420" : "#E16428",
+                type === "comparison"
+                  ? "#2A2420"
+                  : type === "opinion"
+                    ? "#8B7355"
+                    : "#E16428",
             }}
           >
-            {type === "comparison" ? "Comparison" : "Teardown"}
+            {type === "comparison"
+              ? "Comparison"
+              : type === "opinion"
+                ? "Opinion"
+                : "Teardown"}
           </div>
         </div>
 
