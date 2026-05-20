@@ -27,7 +27,7 @@ export const authors: Record<string, Author> = {
     bio: "Designer turned strategist who reads product decisions like sheet music. Fascinated by how small UX choices create massive behavioral shifts. Writes about the craft behind the product.",
     shortBio: "Design strategist & writer",
     twitter: "https://www.linkedin.com/in/vamsikrishnanak/",
-    linkedin: "https://linkedin.com/in/vamsikrishnan",
+    linkedin: "https://www.linkedin.com/in/vamsikrishnanak/",
   },
   david: {
     slug: "david",
