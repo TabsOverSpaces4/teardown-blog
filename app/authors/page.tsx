@@ -28,8 +28,8 @@ export default function AuthorsPage() {
           className="text-lg leading-relaxed"
           style={{ color: "var(--text-muted)" }}
         >
-          Three perspectives, one mission: honest product analysis. We rotate
-          roles every week so no one gets too comfortable.
+          Two perspectives, one mission: honest product analysis. We swap
+          roles every cycle so neither of us gets too comfortable.
         </p>
       </header>
 

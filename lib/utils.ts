@@ -22,7 +22,7 @@ export function calculateReadTime(content: string): string {
 
 export const siteConfig = {
   name: "Unboxd",
-  description: "Weekly product teardowns by Harsh, Vamsi & David. We rip apart competing products so you don't have to.",
+  description: "Weekly product teardowns by Harsh & David. We rip apart competing products so you don't have to.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://unboxd.blog",
   ogImage: "/og-default.png",
   links: {

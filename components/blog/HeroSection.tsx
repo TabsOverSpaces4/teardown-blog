@@ -40,9 +40,8 @@ export function HeroSection() {
           className="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
           style={{ color: "var(--text-muted)" }}
         >
-          Every week, two of us tear down competing products. Then the third
-          writes the verdict. Rotating authors, honest opinions, no
-          sponsorships.
+          Every week, the two of us tear down competing products. Then one of
+          us writes the verdict. Honest opinions, no sponsorships.
         </motion.p>
 
         <motion.div
@@ -73,17 +72,17 @@ export function HeroSection() {
           {[
             {
               step: "Week N",
-              desc: "Two authors each teardown a competing product",
+              desc: "Both of us tear down a competing product",
               accent: true,
             },
             {
               step: "Week N+1",
-              desc: "Third author publishes the head-to-head comparison",
+              desc: "One of us publishes the head-to-head comparison",
               accent: false,
             },
             {
               step: "Repeat",
-              desc: "Roles rotate — everyone writes, everyone judges",
+              desc: "Roles swap — we both write, we both judge",
               accent: false,
             },
           ].map((item, i) => (

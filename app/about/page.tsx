@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `${siteConfig.name} is a weekly product teardown blog. Two writers tear down competing products, then a third writes the comparison.`,
+  description: `${siteConfig.name} is a weekly product teardown blog. Two writers tear down competing products, then one writes the comparison.`,
 };
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
         style={{ color: "var(--text-primary)" }}
       >
         <p className="text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>
-          Unboxd is a weekly product teardown series written by three people who
+          Unboxd is a weekly product teardown series written by two people who
           care deeply about how software is built, designed, and experienced.
         </p>
 
@@ -72,7 +72,7 @@ export default function AboutPage() {
                   Teardown Week
                 </h3>
                 <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                  Two of the three authors each publish a deep-dive teardown of a competing
+                  Both of us publish a deep-dive teardown of a competing
                   product. Think of these as thorough, opinionated product reviews that go
                   beyond surface-level analysis.
                 </p>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                   Comparison Week
                 </h3>
                 <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                  The third author publishes a side-by-side comparison of those two
+                  One of us publishes a side-by-side comparison of those two
                   products, complete with feature tables, ratings, and a clear
                   recommendation for different use cases.
                 </p>
@@ -113,12 +113,12 @@ export default function AboutPage() {
                   className="font-semibold mb-1"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  Rotate & Repeat
+                  Swap & Repeat
                 </h3>
                 <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-                  Authors rotate roles every cycle. Everyone writes teardowns,
-                  everyone writes comparisons. No one gets too comfortable in a
-                  single perspective.
+                  We swap roles every cycle. Both of us write teardowns, both of
+                  us write comparisons. Neither gets too comfortable in a single
+                  perspective.
                 </p>
               </div>
             </div>
