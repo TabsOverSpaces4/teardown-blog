@@ -11,11 +11,11 @@ interface BadgeProps {
 export function Badge({ variant = "default", children, className }: BadgeProps) {
   const variantStyles: Record<string, string> = {
     teardown:
-      "bg-[var(--accent)] text-white",
+      "bg-[var(--accent)] text-[var(--accent-contrast)] shadow-sm",
     comparison:
-      "bg-[var(--text-primary)] text-[var(--bg-primary)]",
+      "bg-[var(--text-primary)] text-[var(--bg-primary)] shadow-sm",
     opinion:
-      "bg-[var(--text-muted)] text-white",
+      "bg-[var(--accent-soft)] text-[var(--accent-hover)] border border-[color-mix(in_srgb,var(--accent)_35%,transparent)]",
     default:
       "bg-[var(--bg-secondary)] text-[var(--text-muted)] border border-[var(--border)]",
   };

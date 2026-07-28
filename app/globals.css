@@ -6,23 +6,69 @@
 }
 
 :root {
-  --bg-primary: #F9F8F6;
-  --bg-secondary: #EFE9E3;
-  --border: #D9CFC7;
-  --text-muted: #C9B59C;
-  --text-primary: #2A2420;
-  --accent: #E16428;
-  --accent-hover: #c9551f;
+  /* Surfaces */
+  --bg-primary: #FAF7F2;
+  --bg-secondary: #F1EADF;
+  --bg-elevated: #FFFFFF;
+
+  /* Borders */
+  --border: #E5DBCC;
+  --border-strong: #D2C4B1;
+
+  /* Text — a real hierarchy, all AA-compliant on the surfaces above */
+  --text-primary: #211D18;
+  --text-secondary: #4F453B;
+  --text-muted: #6E6255;
+  --text-faint: #A6987F;
+
+  /* Accent */
+  --accent: #DA5A24;
+  --accent-hover: #BC4A18;
+  --accent-soft: #F7E3D4;
+  --accent-contrast: #FFFFFF;
+
+  /* Links read a touch deeper than the brand fill so body copy stays legible */
+  --link: #BC4A18;
+  --link-hover: #DA5A24;
+
+  /* Elevation */
+  --shadow-color: 45 36 32;
+  --shadow-sm: 0 1px 2px rgb(var(--shadow-color) / 0.06),
+    0 1px 3px rgb(var(--shadow-color) / 0.05);
+  --shadow-md: 0 8px 24px -6px rgb(var(--shadow-color) / 0.14),
+    0 2px 6px rgb(var(--shadow-color) / 0.06);
 }
 
 .dark {
-  --bg-primary: #272121;
-  --bg-secondary: #363333;
-  --border: #4A4040;
-  --text-muted: #A89A8E;
-  --text-primary: #F6E9E9;
-  --accent: #E16428;
-  --accent-hover: #f07838;
+  /* Surfaces */
+  --bg-primary: #1F1A1A;
+  --bg-secondary: #2B2525;
+  --bg-elevated: #332C2C;
+
+  /* Borders */
+  --border: #423939;
+  --border-strong: #574C4C;
+
+  /* Text */
+  --text-primary: #F4EBE6;
+  --text-secondary: #CDBFB4;
+  --text-muted: #A99B8E;
+  --text-faint: #7A6D63;
+
+  /* Accent — brighter so it pops against the dark ground */
+  --accent: #F0703A;
+  --accent-hover: #FF875A;
+  --accent-soft: #3A2A20;
+  --accent-contrast: #FFFFFF;
+
+  --link: #F0703A;
+  --link-hover: #FF9068;
+
+  /* Elevation */
+  --shadow-color: 0 0 0;
+  --shadow-sm: 0 1px 2px rgb(var(--shadow-color) / 0.4);
+  --shadow-md: 0 10px 28px -8px rgb(var(--shadow-color) / 0.6),
+    0 2px 8px rgb(var(--shadow-color) / 0.4);
 }
 
 html {
@@ -38,7 +84,24 @@ body {
 
 ::selection {
   background-color: var(--accent);
-  color: white;
+  color: var(--accent-contrast);
+}
+
+/* Reusable surface with subtle depth + smooth hover lift */
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-strong);
 }
 
 /* Skip to content */
@@ -62,12 +125,12 @@ body {
 
 /* Prose styles for MDX content */
 .prose {
-  --tw-prose-body: var(--text-primary);
+  --tw-prose-body: var(--text-secondary);
   --tw-prose-headings: var(--text-primary);
-  --tw-prose-links: var(--accent);
+  --tw-prose-links: var(--link);
   --tw-prose-bold: var(--text-primary);
   --tw-prose-counters: var(--text-muted);
-  --tw-prose-bullets: var(--text-muted);
+  --tw-prose-bullets: var(--accent);
   --tw-prose-hr: var(--border);
   --tw-prose-quotes: var(--text-primary);
   --tw-prose-quote-borders: var(--accent);
@@ -75,11 +138,17 @@ body {
   --tw-prose-code: var(--text-primary);
   --tw-prose-pre-code: var(--text-primary);
   --tw-prose-pre-bg: var(--bg-secondary);
-  --tw-prose-th-borders: var(--border);
+  --tw-prose-th-borders: var(--border-strong);
   --tw-prose-td-borders: var(--border);
   max-width: 72ch;
-  font-size: 1.0625rem;
+  font-size: 1.075rem;
   line-height: 1.8;
+}
+
+/* Body copy sits at secondary; strong/emphasis pull it back to primary */
+.prose strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .prose h1,
@@ -98,22 +167,24 @@ body {
 .prose h4 { font-size: 1.125rem; line-height: 1.5; margin-top: 1.5rem; }
 
 .prose a {
-  color: var(--accent);
+  color: var(--link);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
-  transition: color 0.15s ease;
+  text-decoration-color: color-mix(in srgb, var(--link) 40%, transparent);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 .prose a:hover {
-  color: var(--accent-hover);
+  color: var(--link-hover);
+  text-decoration-color: var(--link-hover);
 }
 
 .prose blockquote {
   border-left: 3px solid var(--accent);
   padding-left: 1.25rem;
   font-style: italic;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .prose code:not(pre code) {

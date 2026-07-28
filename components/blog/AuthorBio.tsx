@@ -15,17 +15,11 @@ export function AuthorBio({
   showFullBio = false,
 }: AuthorBioProps) {
   return (
-    <div
-      className="rounded-xl border p-6 flex flex-col sm:flex-row gap-5"
-      style={{
-        borderColor: "var(--border)",
-        backgroundColor: "var(--bg-secondary)",
-      }}
-    >
+    <div className="card rounded-xl p-6 flex flex-col sm:flex-row gap-5">
       <Link href={`/authors/${author.slug}`} className="shrink-0">
         <div
           className="w-16 h-16 rounded-full overflow-hidden border-2"
-          style={{ borderColor: "var(--border)" }}
+          style={{ borderColor: "var(--border-strong)" }}
         >
           <Image
             src={author.avatar}
@@ -65,7 +59,7 @@ export function AuthorBio({
 
         <p
           className="text-sm leading-relaxed mb-3"
-          style={{ color: "var(--text-muted)" }}
+          style={{ color: "var(--text-secondary)" }}
         >
           {showFullBio ? author.bio : author.shortBio}
         </p>

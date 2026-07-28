@@ -6,12 +6,19 @@ import { ArrowDown } from "lucide-react";
 export function HeroSection() {
   return (
     <section className="relative py-20 sm:py-28 overflow-hidden">
-      {/* Subtle background gradient */}
+      {/* Subtle background glow */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 0%, var(--accent), transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 h-px pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to right, transparent, var(--border), transparent)",
         }}
       />
 
@@ -38,7 +45,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
-          style={{ color: "var(--text-muted)" }}
+          style={{ color: "var(--text-secondary)" }}
         >
           Every week, the two of us tear down competing products. Then one of
           us writes the verdict. Honest opinions, no sponsorships.
@@ -51,14 +58,15 @@ export function HeroSection() {
         >
           <a
             href="#latest"
-            className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg transition-all duration-200"
+            className="group inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 hover:-translate-y-0.5"
             style={{
               backgroundColor: "var(--accent)",
-              color: "white",
+              color: "var(--accent-contrast)",
+              boxShadow: "var(--shadow-md)",
             }}
           >
             Read the latest
-            <ArrowDown className="w-4 h-4" />
+            <ArrowDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5" />
           </a>
         </motion.div>
 
@@ -88,12 +96,12 @@ export function HeroSection() {
           ].map((item, i) => (
             <div
               key={i}
-              className="rounded-xl border p-5 text-left"
+              className="card rounded-xl p-5 text-left"
               style={{
-                borderColor: item.accent
-                  ? "var(--accent)"
-                  : "var(--border)",
-                backgroundColor: "var(--bg-secondary)",
+                borderColor: item.accent ? "var(--accent)" : undefined,
+                backgroundColor: item.accent
+                  ? "var(--accent-soft)"
+                  : undefined,
               }}
             >
               <div

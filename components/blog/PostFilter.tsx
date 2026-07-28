@@ -25,10 +25,15 @@ export function PostFilter({ posts }: PostFilterProps) {
   const buttonBase =
     "px-3.5 py-1.5 text-sm font-medium rounded-lg transition-all duration-200 cursor-pointer border";
 
+  const chipClass = (active: boolean) =>
+    active
+      ? "bg-[var(--accent)] text-[var(--accent-contrast)] border-[var(--accent)] shadow-sm"
+      : "bg-transparent text-[var(--text-muted)] border-[var(--border)] hover:text-[var(--text-primary)] hover:border-[var(--border-strong)] hover:bg-[var(--bg-secondary)]";
+
   return (
     <div>
       <div className="flex flex-wrap gap-3 mb-8">
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {[
             { value: "all", label: "All" },
             { value: "teardown", label: "Teardowns" },
@@ -38,21 +43,7 @@ export function PostFilter({ posts }: PostFilterProps) {
             <button
               key={opt.value}
               onClick={() => setTypeFilter(opt.value)}
-              className={buttonBase}
-              style={{
-                backgroundColor:
-                  typeFilter === opt.value
-                    ? "var(--accent)"
-                    : "transparent",
-                color:
-                  typeFilter === opt.value
-                    ? "white"
-                    : "var(--text-muted)",
-                borderColor:
-                  typeFilter === opt.value
-                    ? "var(--accent)"
-                    : "var(--border)",
-              }}
+              className={`${buttonBase} ${chipClass(typeFilter === opt.value)}`}
             >
               {opt.label}
             </button>
@@ -64,17 +55,10 @@ export function PostFilter({ posts }: PostFilterProps) {
           style={{ backgroundColor: "var(--border)" }}
         />
 
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setAuthorFilter("all")}
-            className={buttonBase}
-            style={{
-              backgroundColor:
-                authorFilter === "all" ? "var(--accent)" : "transparent",
-              color: authorFilter === "all" ? "white" : "var(--text-muted)",
-              borderColor:
-                authorFilter === "all" ? "var(--accent)" : "var(--border)",
-            }}
+            className={`${buttonBase} ${chipClass(authorFilter === "all")}`}
           >
             All Authors
           </button>
@@ -82,21 +66,7 @@ export function PostFilter({ posts }: PostFilterProps) {
             <button
               key={author.slug}
               onClick={() => setAuthorFilter(author.slug)}
-              className={buttonBase}
-              style={{
-                backgroundColor:
-                  authorFilter === author.slug
-                    ? "var(--accent)"
-                    : "transparent",
-                color:
-                  authorFilter === author.slug
-                    ? "white"
-                    : "var(--text-muted)",
-                borderColor:
-                  authorFilter === author.slug
-                    ? "var(--accent)"
-                    : "var(--border)",
-              }}
+              className={`${buttonBase} ${chipClass(authorFilter === author.slug)}`}
             >
               {author.name.split(" ")[0]}
             </button>

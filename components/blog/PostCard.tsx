@@ -26,11 +26,7 @@ export function PostCard({ post, index = 0 }: PostCardProps) {
     >
       <Link
         href={`/blog/${frontmatter.slug}`}
-        className="group block rounded-xl border overflow-hidden transition-all duration-300 hover:-translate-y-1"
-        style={{
-          borderColor: "var(--border)",
-          backgroundColor: "var(--bg-secondary)",
-        }}
+        className="group card card-interactive block rounded-xl overflow-hidden"
       >
         {frontmatter.banner && (
           <div className="relative aspect-[16/9] overflow-hidden">
@@ -58,10 +54,11 @@ export function PostCard({ post, index = 0 }: PostCardProps) {
             {frontmatter.products.map((product) => (
               <span
                 key={product.name}
-                className="text-xs font-medium px-2 py-0.5 rounded"
+                className="text-xs font-medium px-2 py-0.5 rounded border"
                 style={{
-                  backgroundColor: "var(--bg-primary)",
-                  color: "var(--text-muted)",
+                  backgroundColor: "var(--bg-elevated)",
+                  borderColor: "var(--border)",
+                  color: "var(--text-secondary)",
                 }}
               >
                 {product.name}
@@ -81,7 +78,7 @@ export function PostCard({ post, index = 0 }: PostCardProps) {
 
           <p
             className="text-sm leading-relaxed mb-4 line-clamp-2"
-            style={{ color: "var(--text-muted)" }}
+            style={{ color: "var(--text-secondary)" }}
           >
             {frontmatter.excerpt}
           </p>
