@@ -7,15 +7,18 @@ import type { Post } from "@/lib/mdx";
 interface LatestCycleProps {
   teardowns: Post[];
   comparison: Post | null;
+  opinions: Post[];
   cycleNumber: number;
 }
 
 export function LatestCycle({
   teardowns,
   comparison,
+  opinions,
   cycleNumber,
 }: LatestCycleProps) {
-  if (teardowns.length === 0 && !comparison) return null;
+  if (teardowns.length === 0 && !comparison && opinions.length === 0)
+    return null;
 
   return (
     <section id="latest" className="scroll-mt-20">
@@ -57,6 +60,23 @@ export function LatestCycle({
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {teardowns.map((post, i) => (
+                <PostCard key={post.frontmatter.slug} post={post} index={i} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Opinions */}
+        {opinions.length > 0 && (
+          <div className="mb-6">
+            <p
+              className="text-sm font-medium uppercase tracking-wider mb-4"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Opinions
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {opinions.map((post, i) => (
                 <PostCard key={post.frontmatter.slug} post={post} index={i} />
               ))}
             </div>

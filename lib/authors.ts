@@ -13,10 +13,10 @@ export const authors: Record<string, Author> = {
   harsh: {
     slug: "harsh",
     name: "Harsh Gupta",
-    avatar: "/images/authors/harsh.svg",
+    avatar: "/images/authors/harsh.png",
     bio: "Product-obsessed engineer who believes great software is built at the intersection of taste and engineering rigor. When not tearing apart productivity tools, he's probably building one.",
     shortBio: "Engineer & product thinker",
-    twitter: "https://twitter.com/harshgupta",
+    twitter: "https://x.com/harshgu41333165?s=11",
     linkedin: "https://www.linkedin.com/in/harshguptaworks/",
     website: "https://tabsoverspaces4.github.io/",
   },
