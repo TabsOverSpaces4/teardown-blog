@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9F8F6"/>
+      <stop offset="100%" stop-color="#EFE9E3"/>
+    </linearGradient>
+    <linearGradient id="accent-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E16428" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#E16428"/>
+      <stop offset="100%" stop-color="#E16428" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)"/>
+  <!-- Decorative circles -->
+  <circle cx="130" cy="140" r="90" fill="#EFE9E3" opacity="0.6"/>
+  <circle cx="1070" cy="460" r="100" fill="#EFE9E3" opacity="0.6"/>
+  <circle cx="980" cy="110" r="45" fill="#E16428" opacity="0.08"/>
+  <circle cx="220" cy="490" r="65" fill="#E16428" opacity="0.08"/>
+  <!-- Accent line -->
+  <rect x="350" y="215" width="500" height="3" rx="1.5" fill="url(#accent-line)"/>
+  <!-- Title -->
+  <text x="600" y="290" text-anchor="middle" dominant-baseline="central" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="46" font-weight="700" fill="#2A2420" letter-spacing="-1">The Best Button Is the One</text>
+  <text x="600" y="348" text-anchor="middle" dominant-baseline="central" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="46" font-weight="700" fill="#2A2420" letter-spacing="-1">You Never Have to Press</text>
+  <!-- Subtitle -->
+  <text x="600" y="410" text-anchor="middle" dominant-baseline="central" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="400" fill="#C9B59C" letter-spacing="3" text-transform="uppercase">UNBOXD OPINION</text>
+  <!-- Bottom accent line -->
+  <rect x="350" y="440" width="500" height="3" rx="1.5" fill="url(#accent-line)"/>
+  <!-- Accent dot -->
+  <circle cx="600" cy="480" r="5" fill="#E16428"/>
+</svg>
